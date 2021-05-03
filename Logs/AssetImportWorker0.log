@@ -2028,3 +2028,240 @@ System memory in use after: 66.1 MB.
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1986.
 Total: 11.140800 ms (FindLiveObjects: 0.515300 ms CreateObjectMapping: 0.228900 ms MarkObjects: 9.135000 ms  DeleteObjects: 1.256900 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001200 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.442 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.8 MB.
+System memory in use after: 62.9 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 1910.
+Total: 3.882700 ms (FindLiveObjects: 0.489600 ms CreateObjectMapping: 0.097800 ms MarkObjects: 3.091800 ms  DeleteObjects: 0.200900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 512.796708 seconds.
+  path: Assets/3D Models/Low_Poly_Wheel.fbx
+  artifactKey: Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Low_Poly_Wheel.fbx using Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e9efc3fa08be18aba706e8b616af5b') in 0.260212 seconds
+  Import took 0.265206 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 392.799869 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(58e66181c62e56a4c94feab47fe384fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(58e66181c62e56a4c94feab47fe384fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beb1a621f579a176892b7c1d3985c338') in 0.028543 seconds
+  Import took 0.034506 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001855 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.628 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 61.9 MB.
+System memory in use after: 61.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1914.
+Total: 4.335500 ms (FindLiveObjects: 0.429400 ms CreateObjectMapping: 0.119800 ms MarkObjects: 3.672500 ms  DeleteObjects: 0.110100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2345.883564 seconds.
+  path: Assets/Low_Poly_Wheel.fbx
+  artifactKey: Guid(4e706028b88247b4a8a5fe3c7a46766b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low_Poly_Wheel.fbx using Guid(4e706028b88247b4a8a5fe3c7a46766b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc75c6dc47fc03c7c73cfa6718fa3b99') in 0.218894 seconds
+  Import took 0.225202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.966723 seconds.
+  path: Assets/3D Models/Low_Poly_Car (1).fbx
+  artifactKey: Guid(fb2eae11ff6a4cd4084bd59c06c23d72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Low_Poly_Car (1).fbx using Guid(fb2eae11ff6a4cd4084bd59c06c23d72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a7903334564f9c0268dc83db793e78e') in 0.058715 seconds
+  Import took 0.063243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 165.124376 seconds.
+  path: Assets/3D Models/Low_Poly_Car.fbx
+  artifactKey: Guid(97170051df257ab4492de6bbcda5083c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Low_Poly_Car.fbx using Guid(97170051df257ab4492de6bbcda5083c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694d546bd102fb8e1f7a24981a499d6b') in 0.060947 seconds
+  Import took 0.066221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 150.683461 seconds.
+  path: Assets/3D Models/wholeTruck.fbx
+  artifactKey: Guid(c6def2d3efa3fc347961cea01b8add58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wholeTruck.fbx using Guid(c6def2d3efa3fc347961cea01b8add58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd547fa4a3da203d8d3c0bc05b2dd984e') in 2.223129 seconds
+  Import took 2.230170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.652461 seconds.
+  path: Assets/3D Models/wholeTruck 1.fbx
+  artifactKey: Guid(b0c549f86dd64f740958b7c4a89cffd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wholeTruck 1.fbx using Guid(b0c549f86dd64f740958b7c4a89cffd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '707cfd3f8a80cbc165ef74819df14f61') in 0.947515 seconds
+  Import took 0.956118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000641 seconds.
+  path: Assets/3D Models/wholeTruck.fbx
+  artifactKey: Guid(c6def2d3efa3fc347961cea01b8add58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wholeTruck.fbx using Guid(c6def2d3efa3fc347961cea01b8add58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c854e14e5f3ab269db04ec7bc5e7193') in 0.969222 seconds
+  Import took 0.976327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.105142 seconds.
+  path: Assets/3D Models/wheels
+  artifactKey: Guid(8709c9ed7b11059448d312c57250422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wheels using Guid(8709c9ed7b11059448d312c57250422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '927ea6cf96b4e8401ee73215624f4622') in 0.039910 seconds
+  Import took 0.047847 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009839 seconds.
+  path: Assets/3D Models/wheels/wheels_lambert1.005_BaseMap.png
+  artifactKey: Guid(1542b9be271b14f4e962be0939257c92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wheels/wheels_lambert1.005_BaseMap.png using Guid(1542b9be271b14f4e962be0939257c92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b0d3836e318dfd6bd64e6a856978d5b') in 0.170803 seconds
+  Import took 0.176990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000527 seconds.
+  path: Assets/3D Models/wheels/wheels_lambert1.005_MaskMap.png
+  artifactKey: Guid(8dce81b5e4b084041bd70c3893a2ca03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wheels/wheels_lambert1.005_MaskMap.png using Guid(8dce81b5e4b084041bd70c3893a2ca03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70fafde2ab43810483d975eaa7ad9a5b') in 0.111459 seconds
+  Import took 0.118079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000612 seconds.
+  path: Assets/3D Models/wheels/wheels_lambert1.005_Normal.png
+  artifactKey: Guid(f0ebfa5cdd8de944c85bd6ec113f924a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/wheels/wheels_lambert1.005_Normal.png using Guid(f0ebfa5cdd8de944c85bd6ec113f924a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd606338a2423a18a1ada78adeb93f7') in 0.090656 seconds
+  Import took 0.096760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.739172 seconds.
+  path: Assets/3D Models/chassis
+  artifactKey: Guid(f733e7181a0b1214f99370eec1cda7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/chassis using Guid(f733e7181a0b1214f99370eec1cda7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2259b3d21a7f86e0ebb92f4607dcbed1') in 0.021442 seconds
+  Import took 0.026299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 79.108134 seconds.
+  path: Assets/3D Models/Car.png
+  artifactKey: Guid(255507f633a1ea147939dd4db09fd277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Car.png using Guid(255507f633a1ea147939dd4db09fd277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e54274f04a42908f6b1c892e4353cb2') in 0.040316 seconds
+  Import took 0.045382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006423 seconds.
+  path: Assets/3D Models/Car.png
+  artifactKey: Guid(255507f633a1ea147939dd4db09fd277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Car.png using Guid(255507f633a1ea147939dd4db09fd277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e54274f04a42908f6b1c892e4353cb2') in 0.018133 seconds
+  Import took 0.024199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.324400 seconds.
+  path: Assets/3D Models/Low_Poly_Wheel.fbx
+  artifactKey: Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Low_Poly_Wheel.fbx using Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7a4432be465b26ae78bb3ef3d00cf9') in 0.049088 seconds
+  Import took 0.054418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.456218 seconds.
+  path: Assets/3D Models/Low_Poly_Wheel.fbx
+  artifactKey: Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Low_Poly_Wheel.fbx using Guid(a95347be465a87340afde03cff4f5bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9bc5524875b6f4c4dfd7ddcdd78c731') in 0.064086 seconds
+  Import took 0.070393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000744 seconds.
+  path: Assets/3D Models/Wheel.png
+  artifactKey: Guid(b0ab6bfd8c1ad49488bd992811e55dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Wheel.png using Guid(b0ab6bfd8c1ad49488bd992811e55dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6265ba51ba004a05e1d91dc032a1b44f') in 0.033774 seconds
+  Import took 0.038370 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.768 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1921.
+Total: 5.554000 ms (FindLiveObjects: 0.424300 ms CreateObjectMapping: 0.071600 ms MarkObjects: 4.886900 ms  DeleteObjects: 0.150500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001596 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.075 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1924.
+Total: 5.876400 ms (FindLiveObjects: 0.583800 ms CreateObjectMapping: 0.247100 ms MarkObjects: 4.805300 ms  DeleteObjects: 0.236100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
