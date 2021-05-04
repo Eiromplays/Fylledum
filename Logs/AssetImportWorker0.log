@@ -875,3 +875,35 @@ Received Import Request.
 Start importing Assets/Scripts/Loading/SceneIndexes.cs using Guid(1ca5eace8d2d96846ab62b2234a8320e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a165e56b4f5cf618a8e9e422a7669bc9') in 0.005635 seconds
   Import took 0.008240 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000791 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.901 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 61.9 MB.
+System memory in use after: 62.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1697.
+Total: 2.037100 ms (FindLiveObjects: 0.216500 ms CreateObjectMapping: 0.054600 ms MarkObjects: 1.692900 ms  DeleteObjects: 0.070700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 665.615054 seconds.
+  path: Assets/Scripts/Loading/SceneIndexes.cs
+  artifactKey: Guid(1ca5eace8d2d96846ab62b2234a8320e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Loading/SceneIndexes.cs using Guid(1ca5eace8d2d96846ab62b2234a8320e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d8e06e020a2d01d7dadd8ffd920b7d1') in 0.004332 seconds
+  Import took 0.006430 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
