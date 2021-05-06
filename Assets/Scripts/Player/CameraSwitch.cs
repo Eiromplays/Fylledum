@@ -1,13 +1,23 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Assets.Scripts.Player
 {
     public class CameraSwitch : MonoBehaviour
     {
+        public static CameraSwitch Instance;
+
         public List<GameObject> cameras = new List<GameObject>();
 
+        public List<GameObject> vehicleCameras = new List<GameObject>();
+
         public int currentCam;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Update()
         {
