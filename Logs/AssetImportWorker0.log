@@ -15,11 +15,11 @@ C:/Users/EIROM/Documents/GitHub/Skole/Spill/Fylledum
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49639
+64068
 Successfully changed project path to: C:/Users/EIROM/Documents/GitHub/Skole/Spill/Fylledum
 C:/Users/EIROM/Documents/GitHub/Skole/Spill/Fylledum
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 28.14 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 102.20 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.0f1 (c7b5465681fb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
@@ -35,65 +35,65 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001871 seconds.
+Registered in 0.018584 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 30.21 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 70.30 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.083 seconds
+- Completed reload, in  3.789 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000678 seconds.
+Registered in 0.002271 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.12 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.037 seconds
+- Completed reload, in  2.497 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.39 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1298 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.5 MB.
-System memory in use after: 65.5 MB.
+System memory in use before: 65.6 MB.
+System memory in use after: 65.7 MB.
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1744.
-Total: 2.270800 ms (FindLiveObjects: 0.189700 ms CreateObjectMapping: 0.052600 ms MarkObjects: 1.932900 ms  DeleteObjects: 0.094300 ms)
+Total: 8.530600 ms (FindLiveObjects: 0.764500 ms CreateObjectMapping: 0.304800 ms MarkObjects: 7.176500 ms  DeleteObjects: 0.277200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/3D Models/Vehicle/Low_Poly_Car.fbx
-  artifactKey: Guid(4320e528f6da54d42aa623c235dc0c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Models/Vehicle/Low_Poly_Car.fbx using Guid(4320e528f6da54d42aa623c235dc0c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca23c3a477d19ae52b29a67d49af072b') in 0.203785 seconds
-  Import took 0.207160 seconds .
+  path: Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.fbx
+  artifactKey: Guid(c49db3c41212b3945831fbe602c62558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.fbx using Guid(c49db3c41212b3945831fbe602c62558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e576d7c0389a9c69367504f18972bc0a') in 0.594976 seconds
+  Import took 0.602497 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 30.024321 seconds.
-  path: Assets/3D Models/Vehicle/Car.png
-  artifactKey: Guid(f555c819a6b832d4b80d3bacbed5d285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Models/Vehicle/Car.png using Guid(f555c819a6b832d4b80d3bacbed5d285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e464c3fafd3937736c3ee05ea3b039f8') in 0.054998 seconds
-  Import took 0.057559 seconds .
+  Time since last request: 0.000638 seconds.
+  path: Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.png
+  artifactKey: Guid(0f22afc0338c3e54c8777da315844080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.png using Guid(0f22afc0338c3e54c8777da315844080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1ad4411f0308b4a83d7cecbe477f53') in 0.045900 seconds
+  Import took 0.053365 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000354 seconds.
-  path: Assets/3D Models/Vehicle/Low_Poly_Car.fbx
-  artifactKey: Guid(4320e528f6da54d42aa623c235dc0c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Models/Vehicle/Low_Poly_Car.fbx using Guid(4320e528f6da54d42aa623c235dc0c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '096b460861ea3ec2def9d7020eea6469') in 0.026695 seconds
-  Import took 0.029118 seconds .
+  Time since last request: 0.014123 seconds.
+  path: Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.png
+  artifactKey: Guid(0f22afc0338c3e54c8777da315844080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Models/Vehicle/MORE_LOW_POLY_CAR.png using Guid(0f22afc0338c3e54c8777da315844080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1ad4411f0308b4a83d7cecbe477f53') in 0.023864 seconds
+  Import took 0.031859 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
