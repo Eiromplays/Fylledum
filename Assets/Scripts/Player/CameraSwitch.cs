@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Assets.Scripts.Player
+namespace Player
 {
     public class CameraSwitch : MonoBehaviour
     {
-        public static CameraSwitch Instance;
+        public static CameraSwitch instance;
 
         public List<GameObject> cameras = new List<GameObject>();
 
@@ -16,7 +15,7 @@ namespace Assets.Scripts.Player
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         private void Update()

@@ -2,9 +2,8 @@ using Assets.Scripts.Helpers;
 using Assets.Scripts.Loading;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
@@ -23,8 +22,12 @@ namespace Assets.Scripts.Managers
         public void Quit()
         {
             if (EditorApplication.isPlaying)
+            {
                 EditorApplication.isPlaying = false;
-            else Application.Quit();
+                return;
+            }
+
+            Application.Quit();
         }
     }
 }

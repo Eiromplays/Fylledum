@@ -1,15 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Player;
+using Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VehicleBehaviour;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class VehicleManager : MonoBehaviour
     {
-        public static VehicleManager Instance;
+        public static VehicleManager instance;
 
         public GameObject enterVehicleUi;
         [HideInInspector]
@@ -21,7 +19,7 @@ namespace Assets.Scripts.Managers
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         private void Start()
@@ -42,7 +40,7 @@ namespace Assets.Scripts.Managers
             vehicle.toogleHandbrake(false);
             vehicle.IsPlayer = true;
 
-            CameraSwitch.Instance.cameras[CameraSwitch.Instance.currentCam].SetActive(false);
+            CameraSwitch.instance.cameras[CameraSwitch.instance.currentCam].SetActive(false);
             camera.gameObject.SetActive(true);
             player.SetActive(false);
 
@@ -67,7 +65,7 @@ namespace Assets.Scripts.Managers
             vehicle.toogleHandbrake(true);
             vehicle.IsPlayer = false;
 
-            CameraSwitch.Instance.cameras[CameraSwitch.Instance.currentCam].SetActive(true);
+            CameraSwitch.instance.cameras[CameraSwitch.instance.currentCam].SetActive(true);
             camera.gameObject.SetActive(false);
             player.SetActive(true);
 

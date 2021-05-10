@@ -1,24 +1,23 @@
-using Assets.Scripts.Managers;
-using Assets.Scripts.Player;
+using Managers;
 using UnityEngine;
 
-namespace Assets.Scripts.Car
+namespace Car
 {
     public class EnterVehicle : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider collider)
+        private void OnTriggerEnter(Collider col)
         {
-            if (!collider.name.Equals("Enter Vehicle")) return;
-            VehicleManager.Instance.currentEnterVehicle = collider.gameObject;
+            if (!col.name.Equals("Enter Vehicle")) return;
+            VehicleManager.instance.currentEnterVehicle = col.gameObject;
             Cursor.lockState = CursorLockMode.None;
-            VehicleManager.Instance.enterVehicleUi.SetActive(true);
+            VehicleManager.instance.enterVehicleUi.SetActive(true);
         }
 
-        private void OnTriggerExit(Collider collider)
+        private void OnTriggerExit(Collider col)
         {
-            VehicleManager.Instance.currentEnterVehicle = null;
+            VehicleManager.instance.currentEnterVehicle = null;
             Cursor.lockState = CursorLockMode.Locked;
-            VehicleManager.Instance.enterVehicleUi.SetActive(false);
+            VehicleManager.instance.enterVehicleUi.SetActive(false);
         }
     }
 }
