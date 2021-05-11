@@ -7,15 +7,18 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        public GameObject titleScreen;
         public GameObject optionsMenu;
 
         public void Play()
         {
+            titleScreen.SetActive(false);
             LoadingHelper.LoadScene((int)SceneIndexes.Game);
         }
 
         public void Options()
         {
+            titleScreen.SetActive(false);
             optionsMenu.SetActive(true);
         }
 

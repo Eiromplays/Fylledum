@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Player
 {
@@ -9,10 +10,13 @@ namespace Assets.Scripts.Player
         public float speed = 7.5f;
         public float maxSpeed = 50f;
 
+        public RawImage staminaBar;
         public float sprintMultiplier = 3f;
         public float sprintLength = 10f;
         public float staminaMultiplier = 20f;
         public float staminaRegainCooldown = 1f;
+
+        public float jumpStaminaUsage = 15f;
 
         public float jumpSpeed = 8.0f;
         public float gravity = 20.0f;
@@ -76,14 +80,18 @@ namespace Assets.Scripts.Player
                 stamina = Mathf.Clamp(stamina, 0f, 100f);
             }
 
+            staminaBar.transform.localScale = new Vector3(stamina / 100f, 1, 1);
+
 
             if (_characterController.isGrounded)
             {
                 // We are grounded, so check for jump input
 
-                if (Input.GetButton("Jump") && canMove)
+                if (Input.GetButtonDown("Jump") && canMove && stamina >= jumpStaminaUsage)
                 {
                     _moveDirection.y = jumpSpeed;
+                    stamina -= jumpStaminaUsage;
+                    cooldownTimer = 0f;
                 }
             }
 
