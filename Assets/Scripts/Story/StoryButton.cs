@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using System;
+using Managers;
 using System.Linq;
 using UnityEngine;
 
@@ -16,7 +17,11 @@ namespace Story
             StoryManager.instance.WipeStories();
             StoryManager.instance.loadedStories.Clear();
 
-            Debug.Log(JsonUtility.ToJson(story));
+            var storyMethod = StoryManager.instance.cachedMethods.FirstOrDefault(m =>
+                m.storyQuestion.Equals(story.question, StringComparison.OrdinalIgnoreCase));
+            Debug.Log("TEST");
+
+            storyMethod?.methodInfo.Invoke(storyMethod.initiatedObject, storyMethod.parameters.ToArray());
         }
     }
 }

@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using Story;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Managers
 {
@@ -27,6 +28,8 @@ namespace Managers
 
         public GameObject storyUi;
 
+        public List<StoryMethod> cachedMethods = new List<StoryMethod>();
+
         private void Awake()
         {
             instance = this;
@@ -34,8 +37,39 @@ namespace Managers
 
         private void Start()
         {
+            CacheMethods();
+
             availableStories = stories.ToList();
             storyUi.SetActive(false);
+        }
+
+        private void CacheMethods()
+        {
+            foreach (var story in stories)
+            {
+                var type = Type.GetType(story.className);
+                Debug.Log("Test");
+                if (type == null) continue;
+                Debug.Log("Test2");
+                var method = type.GetMethod(story.methodName);
+                Debug.Log("Test3");
+                if (method == null) continue;
+                Debug.Log("Test4");
+                var initiatedObject = Activator.CreateInstance(type);
+                Debug.Log("Test5");
+
+                //var parameterTypes = story.parameters.ToList().ConvertAll(a => a.GetType()).ToArray();
+
+                cachedMethods.Add(new StoryMethod
+                {
+                    initiatedObject = initiatedObject,
+                    methodInfo = method,
+                    type = type,
+                    storyQuestion = story.question,
+                    parameters = new List<object>()
+                });
+                Debug.Log("Test6");
+            }
         }
 
         private void Update()
@@ -49,7 +83,7 @@ namespace Managers
 
             if (Input.GetKeyDown(KeyCode.A))
             {
-                LoadStories();
+                LoadStories(true);
             }
         }
 

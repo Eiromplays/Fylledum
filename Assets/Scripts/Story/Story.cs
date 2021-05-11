@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Story
@@ -11,5 +13,11 @@ namespace Story
 
         [InspectorName("Chosen")]
         public bool chosen;
+
+        [InspectorName("MethodName")]
+        public string methodName;
+
+        [InspectorName("ClassName")]
+        public string className;
     }
 }

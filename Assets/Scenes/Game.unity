@@ -1072,10 +1072,16 @@ MonoBehaviour:
   stories:
   - question: Test
     chosen: 0
+    methodName: 
+    className: 
   - question: Testing
     chosen: 0
+    methodName: 
+    className: 
   - question: Yo
     chosen: 0
+    methodName: StoryTest
+    className: Test
   availableStories: []
   loadedStories: []
   chosenStories: []
@@ -1469,9 +1475,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219980731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795be2764fdda174bbee1b4c601c72f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 303582d481804472b1a88dbc731e6838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterVehicleUi: {fileID: 1838225120}
+  currentEnterVehicle: {fileID: 0}
+  player: {fileID: 2132412982}
+  inVehicle: 0
 --- !u!1 &1323150784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -190, y: 0}
+  m_AnchoredPosition: {x: -3467791.2, y: 0}
   m_SizeDelta: {x: 380, y: 525}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1763846024
@@ -2461,7 +2471,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 474715004}
   m_HandleRect: {fileID: 474715003}
   m_Direction: 0
-  m_Value: 0.5000277
+  m_Value: 6304870
   m_Size: 0.9985527
   m_NumberOfSteps: 0
   m_OnValueChanged:
