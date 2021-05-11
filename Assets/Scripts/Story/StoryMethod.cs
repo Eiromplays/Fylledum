@@ -14,6 +14,6 @@ namespace Story
 
         public object initiatedObject;
 
-        public List<object> parameters;
+        public List<StoryObject> parameters;
     }
 }

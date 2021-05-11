@@ -47,18 +47,16 @@ namespace Managers
         {
             foreach (var story in stories)
             {
+                Debug.Log($"Adding story {story.className}");
                 var type = Type.GetType(story.className);
-                Debug.Log("Test");
                 if (type == null) continue;
-                Debug.Log("Test2");
+                
                 var method = type.GetMethod(story.methodName);
-                Debug.Log("Test3");
+ 
                 if (method == null) continue;
-                Debug.Log("Test4");
+    
                 var initiatedObject = Activator.CreateInstance(type);
-                Debug.Log("Test5");
-
-                //var parameterTypes = story.parameters.ToList().ConvertAll(a => a.GetType()).ToArray();
+      
 
                 cachedMethods.Add(new StoryMethod
                 {
@@ -66,10 +64,15 @@ namespace Managers
                     methodInfo = method,
                     type = type,
                     storyQuestion = story.question,
-                    parameters = new List<object>()
+                    parameters = story.parameters
                 });
-                Debug.Log("Test6");
+                Debug.Log("Successfully added story");
             }
+        }
+
+        public void StoryTest()
+        {
+            Debug.Log("Cool!");
         }
 
         private void Update()

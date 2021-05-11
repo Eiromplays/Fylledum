@@ -1072,16 +1072,11 @@ MonoBehaviour:
   stories:
   - question: Test
     chosen: 0
-    methodName: 
-    className: 
-  - question: Testing
-    chosen: 0
-    methodName: 
-    className: 
-  - question: Yo
-    chosen: 0
     methodName: StoryTest
-    className: Test
+    className: Managers.StoryManager
+    parameters:
+    - value: 1
+    - value: Test
   availableStories: []
   loadedStories: []
   chosenStories: []
@@ -2176,7 +2171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1571.6848, y: 0}
+  m_AnchoredPosition: {x: -190, y: 0}
   m_SizeDelta: {x: 380, y: 525}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1763846024
@@ -2617,8 +2612,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 474715004}
   m_HandleRect: {fileID: 474715003}
   m_Direction: 0
-  m_Value: 2512.71
-  m_Size: 0.9985527
+  m_Value: 0.5000277
+  m_Size: 0.99855274
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2799,6 +2794,7 @@ MonoBehaviour:
   sprintLength: 10
   staminaMultiplier: 20
   staminaRegainCooldown: 1.5
+  jumpStaminaUsage: 15
   jumpSpeed: 8
   gravity: 20
   playerCameraParent: {fileID: 685485764}

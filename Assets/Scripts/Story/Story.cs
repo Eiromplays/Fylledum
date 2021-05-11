@@ -19,5 +19,8 @@ namespace Story
 
         [InspectorName("ClassName")]
         public string className;
+
+        [InspectorName("Parameters")]
+        public List<StoryObject> parameters = new List<StoryObject>();
     }
 }
