@@ -20,7 +20,7 @@ namespace Story
             var storyMethod = StoryManager.instance.cachedMethods.FirstOrDefault(m =>
                 m.storyQuestion.Equals(story.question, StringComparison.OrdinalIgnoreCase));
 
-            storyMethod?.methodInfo.Invoke(storyMethod.initiatedObject, null);
+            storyMethod?.methodInfo.Invoke(storyMethod.initiatedObject, storyMethod.parameters);
         }
     }
 }

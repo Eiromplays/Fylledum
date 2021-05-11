@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace Story
@@ -14,6 +13,6 @@ namespace Story
 
         public object initiatedObject;
 
-        public List<StoryObject> parameters;
+        public object[] parameters;
     }
 }

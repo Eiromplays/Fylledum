@@ -47,32 +47,47 @@ namespace Managers
         {
             foreach (var story in stories)
             {
-                Debug.Log($"Adding story {story.className}");
                 var type = Type.GetType(story.className);
                 if (type == null) continue;
-                
-                var method = type.GetMethod(story.methodName);
+
+                var method = type.GetMethod(story.methodName,
+                    BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static |
+                    BindingFlags.NonPublic);
  
                 if (method == null) continue;
-    
-                var initiatedObject = Activator.CreateInstance(type);
-      
 
-                cachedMethods.Add(new StoryMethod
-                {
-                    initiatedObject = initiatedObject,
-                    methodInfo = method,
-                    type = type,
-                    storyQuestion = story.question,
-                    parameters = story.parameters
-                });
-                Debug.Log("Successfully added story");
+                List<object> parameters = new List<object>();
+
+                ConvertValuesToType(method, story, parameters);
+
+                var initiatedObject = Activator.CreateInstance(type);
+
+                AddCacheMethod(initiatedObject, method, type, story, parameters);
             }
         }
 
-        public void StoryTest()
+        private static void ConvertValuesToType(MethodInfo method, Story.Story story, List<object> parameters)
         {
-            Debug.Log("Cool!");
+            for (var i = 0; i < method.GetParameters().Length; i++)
+            {
+                var parameter = method.GetParameters()[i];
+                var storyParam = story.parameters.ElementAtOrDefault(i);
+                if (storyParam == null) continue;
+
+                parameters.Add(Convert.ChangeType(storyParam, parameter.ParameterType));
+            }
+        }
+
+        private void AddCacheMethod(object initiatedObject, MethodInfo method, Type type, Story.Story story, List<object> parameters)
+        {
+            cachedMethods.Add(new StoryMethod
+            {
+                initiatedObject = initiatedObject,
+                methodInfo = method,
+                type = type,
+                storyQuestion = story.question,
+                parameters = parameters.ToArray()
+            });
         }
 
         private void Update()

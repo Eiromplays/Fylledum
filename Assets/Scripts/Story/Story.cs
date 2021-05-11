@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace Story
@@ -21,6 +20,6 @@ namespace Story
         public string className;
 
         [InspectorName("Parameters")]
-        public List<StoryObject> parameters = new List<StoryObject>();
+        public List<string> parameters = new List<string>();
     }
 }
