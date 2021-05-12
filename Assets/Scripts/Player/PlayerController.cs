@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Player
@@ -29,19 +30,27 @@ namespace Assets.Scripts.Player
         Vector2 _rotation = Vector2.zero;
 
         float stamina = 100f;
-        float defaultSpeed = 0;
-        float cooldownTimer = 0;
+        float defaultSpeed;
+        float cooldownTimer;
 
         [HideInInspector]
         public bool canMove = true;
 
+        private Animator _animator;
+
+        private Rigidbody _rigidbody;
+
         private void Start()
         {
+            _rigidbody = GetComponent<Rigidbody>();
+
             Cursor.lockState = CursorLockMode.Locked;
             _characterController = GetComponent<CharacterController>();
             _rotation.y = transform.eulerAngles.y;
 
             defaultSpeed = speed;
+
+            _animator = GetComponent<Animator>();
         }
 
         // ReSharper restore Unity.ExpensiveCode
@@ -61,15 +70,14 @@ namespace Assets.Scripts.Player
             _moveDirection.z = Mathf.Clamp(_moveDirection.z, -maxSpeed, maxSpeed);
 
             // Sprinting calculations
-
-            if(Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+            if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
             {
                 speed = defaultSpeed * sprintMultiplier;
                 cooldownTimer = 0f;
 
                 stamina -= 1f * Time.deltaTime * staminaMultiplier;
+                _animator.SetFloat("Speed", 3f);
             }
-
             else
             {
                 speed = defaultSpeed;
@@ -78,10 +86,13 @@ namespace Assets.Scripts.Player
 
                 stamina += (cooldownTimer == staminaRegainCooldown) ? 1f * Time.deltaTime * staminaMultiplier : 0f;
                 stamina = Mathf.Clamp(stamina, 0f, 100f);
+
+                _animator.SetFloat("Speed", _rigidbody.velocity.magnitude < 3 ? 0f : 2f);
             }
 
-            staminaBar.transform.localScale = new Vector3(stamina / 100f, 1, 1);
+            //Debug.Log($"Magnitude {_rigidbody.velocity.magnitude}");
 
+            staminaBar.transform.localScale = new Vector3(stamina / 100f, 1, 1);
 
             if (_characterController.isGrounded)
             {
@@ -104,14 +115,13 @@ namespace Assets.Scripts.Player
             _characterController.Move(_moveDirection * Time.deltaTime);
 
             // Player and Camera rotation
-            if (canMove)
-            {
-                _rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
-                _rotation.x += -Input.GetAxis("Mouse Y") * lookSpeed;
-                _rotation.x = Mathf.Clamp(_rotation.x, -lookXLimit, lookXLimit);
-                playerCameraParent.localRotation = Quaternion.Euler(_rotation.x, 0, 0);
-                transform.eulerAngles = new Vector2(0, _rotation.y);
-            }
+            if (!canMove) return;
+
+            _rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
+            _rotation.x += -Input.GetAxis("Mouse Y") * lookSpeed;
+            _rotation.x = Mathf.Clamp(_rotation.x, -lookXLimit, lookXLimit);
+            playerCameraParent.localRotation = Quaternion.Euler(_rotation.x, 0, 0);
+            transform.eulerAngles = new Vector2(0, _rotation.y);
         }
     }
 }

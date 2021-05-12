@@ -17,7 +17,7 @@ namespace Story
             StoryManager.instance.WipeStories();
             StoryManager.instance.loadedStories.Clear();
 
-            var storyMethod = StoryManager.instance.cachedMethods.FirstOrDefault(m =>
+            var storyMethod = StoryManager.instance.CachedMethods.FirstOrDefault(m =>
                 m.storyQuestion.Equals(story.question, StringComparison.OrdinalIgnoreCase));
 
             storyMethod?.methodInfo.Invoke(storyMethod.initiatedObject, storyMethod.parameters);

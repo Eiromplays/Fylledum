@@ -27,8 +27,9 @@ namespace Managers
         public TextMeshProUGUI storyUiInformation;
 
         public GameObject storyUi;
+        public Color defaultStoryUiInformationTextColor;
 
-        public List<StoryMethod> cachedMethods = new List<StoryMethod>();
+        public List<StoryMethod> CachedMethods = new List<StoryMethod>();
 
         private void Awake()
         {
@@ -51,8 +52,8 @@ namespace Managers
                 if (type == null) continue;
 
                 var method = type.GetMethod(story.methodName,
-                    BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static |
-                    BindingFlags.NonPublic);
+                    BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance |
+                    BindingFlags.Static | BindingFlags.NonPublic);
  
                 if (method == null) continue;
 
@@ -80,7 +81,7 @@ namespace Managers
 
         private void AddCacheMethod(object initiatedObject, MethodInfo method, Type type, Story.Story story, List<object> parameters)
         {
-            cachedMethods.Add(new StoryMethod
+            CachedMethods.Add(new StoryMethod
             {
                 initiatedObject = initiatedObject,
                 methodInfo = method,
@@ -92,14 +93,7 @@ namespace Managers
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                Cursor.lockState = Cursor.lockState != CursorLockMode.None
-                    ? CursorLockMode.None
-                    : CursorLockMode.Locked;
-            }
-
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.CapsLock))
             {
                 LoadStories(true);
             }
@@ -118,6 +112,8 @@ namespace Managers
             loadedStories = availableStories.Take(amount).ToList();
 
             GenerateStoriesUi(amount);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void GenerateStoriesUi(int amount)
@@ -139,13 +135,15 @@ namespace Managers
             storyUi.SetActive(true);
             if (!availableStories.Any())
             {
-                storyUiInformation.text = $"No More Stories to load";
+                storyUiInformation.text = $"Klarte ikke å finne/laste inn flere spørsmål.";
                 storyUiInformation.color = Color.red;
+                storyUiInformation.fontStyle = FontStyles.Normal;
                 return true;
             }
 
-            storyUiInformation.text = "Choose one";
-            storyUiInformation.color = Color.white;
+            storyUiInformation.text = "TA ET VALG:";
+            storyUiInformation.fontStyle = FontStyles.Underline;
+            storyUiInformation.color = defaultStoryUiInformationTextColor;
             return false;
         }
 
