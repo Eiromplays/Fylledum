@@ -87,7 +87,11 @@ namespace Assets.Scripts.Managers
         // ReSharper restore Unity.ExpensiveCode
         public IEnumerator GetSceneLoadProgress()
         {
-            backgroundImage.sprite = backgrounds[Random.Range(0, backgrounds.Length)];
+            var randomImageIndex = Random.Range(0, backgrounds.Length);
+            var randomImage = backgrounds.ElementAtOrDefault(randomImageIndex);
+            if (randomImage != null)
+                backgroundImage.sprite = randomImage;
+
             foreach (var scene in ScenesLoading.ToList())
             {
                 while (!scene.isDone)

@@ -91,14 +91,6 @@ namespace Managers
             });
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.CapsLock))
-            {
-                LoadStories(true);
-            }
-        }
-
         public void LoadStories(bool loadAll = false, int amount = 2)
         {
             WipeStories();
