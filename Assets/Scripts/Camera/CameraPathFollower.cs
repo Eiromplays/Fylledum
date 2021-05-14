@@ -12,14 +12,14 @@ namespace Camera
     {
 		public float speed = 3f;
         public Transform pathParent;
-        Transform targetPoint;
-        int index;
+        private Transform _targetPoint;
+        private int _index;
 
         public bool restartAtEnd;
         public bool hideCameraAtEnd;
 
-        private Vector3 startPos;
-        private Quaternion startRotation;
+        private Vector3 _startPos;
+        private Quaternion _startRotation;
 
         public GameObject fadeOnRestartUi;
         public bool showFadeOnRestart;
@@ -48,10 +48,10 @@ namespace Camera
 
         private void Start()
         {
-            startRotation = transform.rotation;
-            startPos = transform.position;
-            index = 0;
-            targetPoint = pathParent.GetChild(index);
+            _startRotation = transform.rotation;
+            _startPos = transform.position;
+            _index = 0;
+            _targetPoint = pathParent.GetChild(_index);
         }
 
         private void RestartGame()
@@ -67,41 +67,45 @@ namespace Camera
             }
 
             yield return new WaitForSeconds(delayRestart);
-            index = 0;
-            targetPoint = pathParent.GetChild(index);
+            _index = 0;
+            _targetPoint = pathParent.GetChild(_index);
         }
 
         // Update is called once per frame
 
         public int repeated;
+        private bool _loadingScene;
         private void Update()
         {
-            if (index == pathParent.childCount || repeated >= repeat && repeat > 0)
+            if (_index == pathParent.childCount || repeated >= repeat && repeat > 0)
             {
-                if (backToMainMenu)
+                if (backToMainMenu && repeated >= repeat && repeat > 0 && !_loadingScene)
                 {
+                    _loadingScene = true;
+
                     LoadingHelper.LoadScene((int)SceneIndexes.MainMenu);
+                    
                     return;
                 }
 
                 if (RestartAtEnd()) return;
 
-                transform.SetPositionAndRotation(startPos, startRotation);
+                transform.SetPositionAndRotation(_startPos, _startRotation);
                 RestartGame();
                 return;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
-            if (!(Vector3.Distance(transform.position, targetPoint.position) < 0.1f)) return;
-            index++;
-            if (index == pathParent.childCount)
+            transform.position = Vector3.MoveTowards(transform.position, _targetPoint.position, speed * Time.deltaTime);
+            if (!(Vector3.Distance(transform.position, _targetPoint.position) < 0.1f)) return;
+            _index++;
+            if (_index == pathParent.childCount)
             {
                 repeated++;
                 return;
             }
-            targetPoint = pathParent.GetChild(index);
+            _targetPoint = pathParent.GetChild(_index);
 
-            var cameraFollowOption = cameraFollowOptions.FirstOrDefault(o => o.pathIndex == index);
+            var cameraFollowOption = cameraFollowOptions.FirstOrDefault(o => o.pathIndex == _index);
 
             if (cameraFollowOption != null)
             {
