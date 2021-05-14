@@ -57,10 +57,12 @@ namespace Assets.Scripts.Player
         // ReSharper disable Unity.PerformanceAnalysis
         private void Update()
         {
-            if (Input.GetAxis("Vertical") <= 0 && Input.GetAxis("Horizontal") <= 0)
+            bool debounce = false;
+
+            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
             {
                 _animator.SetFloat("Speed", 0f);
-                return;
+                debounce = true;
             }
 
             Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -93,7 +95,7 @@ namespace Assets.Scripts.Player
                 stamina += (cooldownTimer == staminaRegainCooldown) ? 1f * Time.deltaTime * staminaMultiplier : 0f;
                 stamina = Mathf.Clamp(stamina, 0f, 100f);
 
-                _animator.SetFloat("Speed", 2f);
+                if(!debounce) _animator.SetFloat("Speed", 2f);
             }
 
             //Debug.Log($"Magnitude {_rigidbody.velocity.magnitude}");

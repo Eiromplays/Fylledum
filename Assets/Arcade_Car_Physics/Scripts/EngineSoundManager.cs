@@ -14,6 +14,8 @@ namespace VehicleBehaviour {
     public class EngineSoundManager : MonoBehaviour {
 
         [Header("AudioClips")]
+
+        public GameObject musicSource;
         public AudioClip starting;
         public AudioClip rolling;
         public AudioClip stopping;
@@ -26,18 +28,27 @@ namespace VehicleBehaviour {
         public float pitchSpeed = 0.05f;
 
         private AudioSource _source;
+        private AudioSource _music;
         private WheelVehicle _vehicle;
+
+        private bool previouslyInactive;
         
         void Start () {
             _source = GetComponent<AudioSource>();
             _vehicle = GetComponent<WheelVehicle>();
+            _music = musicSource.GetComponent<AudioSource>();
         }
         
         void Update () {
+            if (previouslyInactive && _vehicle.IsPlayer) _music.Play();
+
+            if (!previouslyInactive && !_vehicle.IsPlayer) _music.Stop();
+
             if (_vehicle.Handbrake && _source.clip == rolling)
             {
                 _source.clip = stopping;
                 _source.Play();
+
             }
 
             if (!_vehicle.Handbrake && (_source.clip == stopping || _source.clip == null))
@@ -58,6 +69,8 @@ namespace VehicleBehaviour {
             {
                 _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(_vehicle.Speed) / flatoutSpeed, pitchSpeed);
             }
+
+            previouslyInactive = !_vehicle.IsPlayer;
         }
     }
 }

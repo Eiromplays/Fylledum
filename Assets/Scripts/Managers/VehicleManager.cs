@@ -79,6 +79,7 @@ namespace Assets.Scripts.Managers
             if (player != null)
             {
                 player.SetActive(!active);
+                player.transform.position = currentEnterVehicle.transform.position + Vector3.left * 3.5f;
             }
         }
     }
