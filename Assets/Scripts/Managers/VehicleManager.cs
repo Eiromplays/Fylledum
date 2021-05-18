@@ -70,6 +70,10 @@ namespace Assets.Scripts.Managers
             UpdateCamera(camera, false);
 
             inVehicle = false;
+
+            var vehicle = currentEnterVehicle.GetComponentInParent<WheelVehicle>();
+
+            player.transform.position = vehicle.transform.position + (Vector3.left * 3.5f);
         }
 
         private void UpdateCamera(Transform camera, bool active)
@@ -79,7 +83,6 @@ namespace Assets.Scripts.Managers
             if (player != null)
             {
                 player.SetActive(!active);
-                player.transform.position = currentEnterVehicle.transform.position + Vector3.left * 3.5f;
             }
         }
     }
