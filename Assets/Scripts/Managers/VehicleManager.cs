@@ -1,9 +1,12 @@
 ﻿using System.Collections;
+using Assets.Scripts.Helpers;
+using Assets.Scripts.Loading;
+using Assets.Scripts.Player;
 using Player;
 using UnityEngine;
 using VehicleBehaviour;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class VehicleManager : MonoBehaviour
     {
@@ -12,6 +15,8 @@ namespace Assets.Scripts.Managers
         public GameObject enterVehicleUi;
         [HideInInspector]
         public GameObject currentEnterVehicle;
+
+        public GameObject gameOver;
 
         [InspectorName("Player")]
         public GameObject player;
@@ -28,6 +33,14 @@ namespace Assets.Scripts.Managers
             enterVehicleUi.SetActive(false);
         }
 
+        public void GameOver()
+        {
+            gameOver.SetActive(true);
+            ExitCurrentVehicle();
+            PlayerController.CanMove = false;
+            StartCoroutine(GameOverOutro());
+        }
+
         public void EnterVehicle()
         {
             if (currentEnterVehicle == null) return;
@@ -38,7 +51,7 @@ namespace Assets.Scripts.Managers
 
             enterVehicleUi.SetActive(false);
             inVehicle = true;
-            Debug.Log($"Entered Vehicle");
+            
             StartCoroutine(ExitVehicle());
         }
 
@@ -63,9 +76,20 @@ namespace Assets.Scripts.Managers
         {
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));
 
-            if (currentEnterVehicle == null) yield break;
+            ExitCurrentVehicle();
+        }
 
-            if (!GetVehicleAndCamera(out var camera, true, false)) yield break;
+        private IEnumerator GameOverOutro()
+        {
+            yield return new WaitForSeconds(3f);
+            LoadingHelper.LoadScene((int)SceneIndexes.Outro);
+        }
+
+        private void ExitCurrentVehicle()
+        {
+            if (currentEnterVehicle == null) return;
+
+            if (!GetVehicleAndCamera(out var camera, true, false)) return;
 
             UpdateCamera(camera, false);
 
@@ -84,6 +108,16 @@ namespace Assets.Scripts.Managers
             {
                 player.SetActive(!active);
             }
+        }
+    }
+
+    public class VehicleManagerTest
+    {
+        public void GameOver()
+        {
+            if (VehicleManager.Instance == null) return;
+
+            VehicleManager.Instance.GameOver();
         }
     }
 }

@@ -94,6 +94,7 @@ namespace Assets.Scripts.Managers
 
             foreach (var scene in ScenesLoading.ToList())
             {
+                if (scene == null) continue;
                 while (!scene.isDone)
                 {
                     _totalSceneProgress = 0;
