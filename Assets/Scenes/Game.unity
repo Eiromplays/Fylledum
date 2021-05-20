@@ -42907,7 +42907,7 @@ MonoBehaviour:
     methodName: NoParams
     className: Story.StoryTest
     parameters: []
-  - question: "Sp\xF8rr en venn"
+  - question: "Sp\xF8r en venn"
     chosen: 0
     methodName: NoParams
     className: Story.StoryTest
@@ -44754,7 +44754,7 @@ MonoBehaviour:
   throttleInput: Vertical
   brakeInput: Fire3
   turnInput: Horizontal
-  jumpInput: Jump
+  handbrakeInput: Jump
   driftInput: Fire1
   boostInput: Fire2
   turnInputCurve:
@@ -47680,7 +47680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25a137f5b473e7f4fa3db9618d605ed8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 173.2
+      value: 169.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25a137f5b473e7f4fa3db9618d605ed8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83174,8 +83174,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148080975492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.04, y: 3.67, z: 6.69}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.34, y: 3.67, z: 9.41}
   m_LocalScale: {x: 1.1302621, y: 2.8999996, z: 1}
   m_Children:
   - {fileID: 1550373519}
@@ -83190,7 +83190,7 @@ Transform:
   - {fileID: 2057586201}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &543450652855704842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7379221298652911256, guid: e5f3df4af2f24514a92cafdf03b4418e, type: 3}

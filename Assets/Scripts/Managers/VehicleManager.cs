@@ -54,7 +54,7 @@ namespace Assets.Scripts.Managers
             camera = vehicle.transform.Find("Camera");
             if (camera == null) return false;
 
-            vehicle.toogleHandbrake(handbrake);
+            vehicle.ToggleHandbrake(handbrake);
             vehicle.IsPlayer = isPlayer;
             return true;
         }

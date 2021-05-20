@@ -28,7 +28,7 @@ namespace VehicleBehaviour {
         [SerializeField] string throttleInput = "Throttle";
         [SerializeField] string brakeInput = "Brake";
         [SerializeField] string turnInput = "Horizontal";
-        [SerializeField] string jumpInput = "Jump";
+        [SerializeField] string handbrakeInput = "Jump";
         [SerializeField] string driftInput = "Drift";
 	    [SerializeField] string boostInput = "Boost";
         
@@ -242,8 +242,8 @@ namespace VehicleBehaviour {
                 steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
                 drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
-                // Jump
-                jumping = GetInput(jumpInput) != 0;
+                // Handbrake
+                ToggleHandbrake(GetInput(handbrakeInput) != 0);
             }
 
             // Direction
@@ -346,7 +346,7 @@ namespace VehicleBehaviour {
             _rb.angularVelocity = Vector3.zero;
         }
 
-        public void toogleHandbrake(bool h)
+        public void ToggleHandbrake(bool h)
         {
             handbrake = h;
         }
