@@ -40,6 +40,8 @@ namespace Assets.Scripts.Player
 
         private Rigidbody _rigidbody;
 
+        public static bool CanMove = true;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -57,6 +59,11 @@ namespace Assets.Scripts.Player
         // ReSharper disable Unity.PerformanceAnalysis
         private void Update()
         {
+            if (!CanMove)
+            {
+                return;
+            }
+
             bool debounce = false;
 
             if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
@@ -97,8 +104,6 @@ namespace Assets.Scripts.Player
 
                 if(!debounce) _animator.SetFloat("Speed", 2f);
             }
-
-            //Debug.Log($"Magnitude {_rigidbody.velocity.magnitude}");
 
             staminaBar.transform.localScale = new Vector3(stamina / 100f, 1, 1);
 

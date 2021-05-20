@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Assets.Scripts.Player;
 using Story;
 using TMPro;
 using UnityEngine;
@@ -94,6 +96,7 @@ namespace Managers
         public void LoadStories(bool loadAll = false, int amount = 2)
         {
             WipeStories();
+            
             if (UpdateStoriesUi()) return;
 
             if (loadAll)
@@ -102,10 +105,21 @@ namespace Managers
             }
 
             loadedStories = availableStories.Take(amount).ToList();
-
+            
             GenerateStoriesUi(amount);
 
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.None;
+
+            PlayerController.CanMove = false;
+
+            StartCoroutine(SetCursorState(Cursor.lockState));
+        }
+
+        IEnumerator SetCursorState(CursorLockMode cursorLock)
+        {
+            yield return new WaitUntil(() => Cursor.lockState != cursorLock);
+
+            Cursor.lockState = CursorLockMode.None;
         }
 
         private void GenerateStoriesUi(int amount)
@@ -141,15 +155,28 @@ namespace Managers
 
         public void WipeStories()
         {
+            PlayerController.CanMove = true;
+
+            Cursor.lockState = CursorLockMode.Locked;
             foreach (Transform ui in storyUiSpawn.transform)
             {
-                Destroy(ui.gameObject);
+                if(ui.gameObject != null)
+                    Destroy(ui.gameObject);
             }
         }
 
         private void SetStoryUiText(GameObject ui, string text)
         {
             ui.transform.Find("Story Question").GetComponent<TextMeshProUGUI>().text = text;
+        }
+    }
+
+    public class StoryHelper
+    {
+        public static void LoadStories(bool loadAll = false, int amount = 2)
+        {
+            if (StoryManager.instance == null) return;
+            StoryManager.instance.LoadStories(false, amount);
         }
     }
 }

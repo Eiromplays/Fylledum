@@ -1,9 +1,12 @@
+using Assets.Scripts.Camera;
+using Assets.Scripts.Helpers;
+using Assets.Scripts.Loading;
+using Story;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.Helpers;
-using Assets.Scripts.Loading;
+using System.Reflection;
 using UnityEngine;
 
 namespace Camera
@@ -35,6 +38,10 @@ namespace Camera
 
         public List<CameraFollowOptions> cameraFollowOptions = new List<CameraFollowOptions>();
 
+        public List<CameraMethod> cameraMethods = new List<CameraMethod>();
+
+        public List<StoryMethod> MethodsToRunWhenComplete = new List<StoryMethod>();
+
         private void OnDrawGizmos()
         {
             for (int a = 0; a < pathParent.childCount; a++)
@@ -48,10 +55,59 @@ namespace Camera
 
         private void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            CacheMethods();
+
             _startRotation = transform.rotation;
             _startPos = transform.position;
             _index = 0;
             _targetPoint = pathParent.GetChild(_index);
+        }
+
+        private void CacheMethods()
+        {
+            foreach (var cameraMethod in cameraMethods)
+            {
+                var type = Type.GetType(cameraMethod.className);
+                if (type == null) continue;
+
+                var method = type.GetMethod(cameraMethod.methodName,
+                    BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance |
+                    BindingFlags.Static | BindingFlags.NonPublic);
+
+                if (method == null) continue;
+
+                List<object> parameters = new List<object>();
+
+                ConvertValuesToType(method, cameraMethod, parameters);
+
+                var initiatedObject = Activator.CreateInstance(type);
+
+                AddCacheMethod(initiatedObject, method, type, parameters);
+            }
+        }
+
+        private void ConvertValuesToType(MethodInfo method, CameraMethod cameraMethod, List<object> parameters)
+        {
+            for (var i = 0; i < method.GetParameters().Length; i++)
+            {
+                var parameter = method.GetParameters()[i];
+                var storyParam = cameraMethod.parameters.ElementAtOrDefault(i);
+                if (storyParam == null) continue;
+
+                parameters.Add(Convert.ChangeType(storyParam, parameter.ParameterType));
+            }
+        }
+
+        private void AddCacheMethod(object initiatedObject, MethodInfo method, Type type, List<object> parameters)
+        {
+            MethodsToRunWhenComplete.Add(new StoryMethod
+            {
+                initiatedObject = initiatedObject,
+                methodInfo = method,
+                type = type,
+                parameters = parameters.ToArray()
+            });
         }
 
         private void RestartGame()
@@ -130,6 +186,11 @@ namespace Camera
             if (hideCameraAtEnd)
             {
                 gameObject.SetActive(false);
+            }
+
+            foreach (var method in MethodsToRunWhenComplete)
+            {
+                method?.methodInfo.Invoke(method.initiatedObject, method.parameters);
             }
 
             return true;
