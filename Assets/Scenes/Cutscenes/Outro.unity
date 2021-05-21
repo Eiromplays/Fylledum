@@ -2379,7 +2379,7 @@ MonoBehaviour:
   showFadeOnRestart: 1
   delayRestart: 0.5
   backToMainMenu: 1
-  repeat: 3
+  repeat: 1
   objectsToSetActive: []
   objectsToHide: []
   cameraFollowOptions: []

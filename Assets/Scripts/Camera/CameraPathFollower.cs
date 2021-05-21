@@ -137,6 +137,8 @@ namespace Camera
             {
                 if (backToMainMenu && repeated >= repeat && repeat > 0 && !_loadingScene)
                 {
+                    Cursor.lockState = CursorLockMode.None;
+
                     _loadingScene = true;
 
                     LoadingHelper.LoadScene((int)SceneIndexes.MainMenu);
@@ -192,6 +194,8 @@ namespace Camera
             {
                 method?.methodInfo.Invoke(method.initiatedObject, method.parameters);
             }
+
+            Cursor.lockState = CursorLockMode.None;
 
             return true;
         }

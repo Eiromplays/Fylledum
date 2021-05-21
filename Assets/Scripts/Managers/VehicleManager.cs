@@ -18,6 +18,8 @@ namespace Managers
 
         public GameObject gameOver;
 
+        public GameObject youWon;
+
         [InspectorName("Player")]
         public GameObject player;
 
@@ -40,6 +42,20 @@ namespace Managers
             PlayerController.CanMove = false;
             StartCoroutine(GameOverOutro());
         }
+        private IEnumerator GameOverOutro()
+        {
+            yield return new WaitForSeconds(3f);
+            LoadingHelper.LoadScene((int)SceneIndexes.Outro);
+        }
+
+        public void YouWon()
+        {
+            youWon.SetActive(true);
+            ExitCurrentVehicle();
+            PlayerController.CanMove = false;
+            StartCoroutine(GameOverOutro());
+        }
+
 
         public void EnterVehicle()
         {
@@ -79,12 +95,6 @@ namespace Managers
             ExitCurrentVehicle();
         }
 
-        private IEnumerator GameOverOutro()
-        {
-            yield return new WaitForSeconds(3f);
-            LoadingHelper.LoadScene((int)SceneIndexes.Outro);
-        }
-
         private void ExitCurrentVehicle()
         {
             if (currentEnterVehicle == null) return;
@@ -118,6 +128,13 @@ namespace Managers
             if (VehicleManager.Instance == null) return;
 
             VehicleManager.Instance.GameOver();
+        }
+
+        public void YouWon()
+        {
+            if (VehicleManager.Instance == null) return;
+
+            VehicleManager.Instance.YouWon();
         }
     }
 }

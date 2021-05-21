@@ -24,11 +24,13 @@ namespace Managers
 
         public void Quit()
         {
+            #if UNITY_EDITOR
             if (EditorApplication.isPlaying)
             {
                 EditorApplication.isPlaying = false;
                 return;
             }
+            #endif
 
             Application.Quit();
         }
